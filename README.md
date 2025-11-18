@@ -41,7 +41,7 @@ python model.py
 
 ## 📊 Pipeline Overview
 
-### 1. Feature Extraction (`feature_extraction.py`)
+### 1. Feature Extraction (`all_feature.py`)
 Extracts comprehensive features from drug SMILES strings and protein sequences:
 
 - **Drug Features**: Molecular descriptors + Morgan fingerprints (1024 bits)
@@ -50,17 +50,17 @@ Extracts comprehensive features from drug SMILES strings and protein sequences:
 
 ### 2. Data Balancing
 
-#### Undersampling (`fuzzy_undersampling.py`)
+#### Undersampling (`undersampling.py`)
 - Implements fuzzy C-means clustering for intelligent undersampling
 - Handles large datasets with batch processing (10,000 samples per batch)
 - Maintains data distribution while reducing majority class samples
 
-#### Oversampling (`brics_oversampling.py`)
+#### Oversampling (`k-means.py`)
 - Uses BRICS (Breaking Retrosynthetically Interesting Chemical Substructures) for molecular assembly
 - Generates novel drug molecules by combining fragments from similar compounds
 - Includes timeout mechanisms and cross-platform compatibility
 
-### 3. Model Architecture (`model_training.py`)
+### 3. Model Architecture (`model.py`)
 **DeepDTI Model**:
 - **Protein Encoder**: LSTM with attention mechanism for sequence processing
 - **Drug Encoder**: 1D CNN for SMILES string feature extraction
@@ -96,7 +96,7 @@ The model evaluates using:
 
 ### Feature Extraction
 ```python
-from feature_extraction import generate_features
+from all_feature import generate_features
 
 # Generate features from drug-target pairs
 result_df = generate_features(
@@ -107,7 +107,7 @@ result_df = generate_features(
 
 ### Undersampling
 ```python
-from fuzzy_undersampling import batch_fuzzy_undersampling
+from undersampling import batch_fuzzy_undersampling
 
 # Balance the dataset
 balanced_df = batch_fuzzy_undersampling(
@@ -118,7 +118,7 @@ balanced_df = batch_fuzzy_undersampling(
 
 ### Model Training
 ```python
-from model_training import train_model
+from model import train_model
 
 # Train the DeepDTI model
 train_model(seed=42)
@@ -155,8 +155,6 @@ Required CSV columns:
 
 - `feature.csv`: Extracted feature matrix
 - `undersampled_batch.csv`: Balanced dataset after undersampling
-- `best_deep_dti_model.pth`: Trained model weights
-- `experiment_results_seed_*.csv`: Training results and metrics
 
 ## 🛠️ Customization
 
