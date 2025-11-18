@@ -5,11 +5,11 @@ This project implements a comprehensive pipeline for drug-target interaction (DT
 ## 📁 Project Structure
 
 ```
-├── feature_extraction.py          # Document 1: Feature extraction from drugs and proteins
-├── brics_oversampling.py          # Document 2: BRICS-based oversampling for drug data
-├── model_training.py              # Document 3: Deep learning model training (DeepDTI)
-├── drug_feature_extraction.py     # Document 4: Drug feature extraction for oversampling
-└── fuzzy_undersampling.py         # Document 5: Fuzzy C-means undersampling implementation
+├── all_feature.py          # Document 1: Feature extraction from drugs and proteins
+├── k-measns.py          # Document 2: BRICS-based oversampling for drug data
+├── model.py              # Document 3: Deep learning model training (DeepDTI)
+├── smiles-feature.py     # Document 4: Drug feature extraction for oversampling
+└── undersampling.py         # Document 5: Fuzzy  undersampling implementation
 ```
 
 ## 🚀 Quick Start
