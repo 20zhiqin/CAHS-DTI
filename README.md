@@ -26,17 +26,17 @@ pip install rdkit biopython scikit-learn torch pandas numpy
 
 2. **Extract features**:
 ```python
-python feature_extraction.py
+python all_feature.py
 ```
 
 3. **Balance the dataset**:
 ```python
-python fuzzy_undersampling.py
+python undersampling.py
 ```
 
 4. **Train the model**:
 ```python
-python model_training.py
+python model.py
 ```
 
 ## 📊 Pipeline Overview
@@ -176,9 +176,10 @@ If you use this code in your research, please cite:
 ```bibtex
 @software{dti_prediction_pipeline,
   title = {Drug-Target Interaction Prediction Pipeline},
-  author = {Your Name},
-  year = {2024},
-  url = {https://github.com/your-repo}
+  author = {wu zhen},
+  year = {2025},
+  url = {https://github.com/20zhiqin/CAHS-DTI}
+  email = 2474633381@qq.com
 }
 ```
 
